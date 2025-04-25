@@ -1,0 +1,593 @@
+/* 기본 스타일 */
+:root {
+  --primary-color: #6a5acd;
+  --secondary-color: #9370db;
+  --accent-color: #4b0082;
+  --text-color: #333;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo a {
+  color: white;
+}
+
+.logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  color: white;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* 히어로 섹션 */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/new/back.png');
+  background-size: cover;
+  background-position: center center; /* 배경 이미지 위치 수정 */
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* 섹션 공통 스타일 */
+section {
+  padding: 5rem 0;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+/* 회사 소개 섹션 */
+.about {
+  background-color: black;
+  color: white; /* 텍스트 색상 추가 */
+  padding: 5rem 0;
+}
+
+.about h2 {
+  color: white; /* 제목 색상 변경 */
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem; /* 여백 추가 */
+}
+
+.about-text {
+  color: white;
+  flex: 1;
+  min-width: 300px;
+  padding: 0 1rem;
+}
+
+.about-text p {
+  margin-bottom: 1rem; /* 문단 간격 추가 */
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 0 1rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 비즈니스 모델 섹션 */
+.business-model-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.business-model-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 기술 소개 섹션 */
+.technology {
+  background-color: var(--light-color);
+  padding: 5rem 0;
+}
+
+.technology h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* 수정된 tech-cards 레이아웃 */
+.tech-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3개의 동일한 너비 열 */
+  gap: 2rem;
+  margin-bottom: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 첫 번째 카드(벤치마크)는 전체 너비 차지 */
+.tech-card:first-child {
+  grid-column: 1 / -1; /* 모든 열을 차지 */
+  max-width: 100%;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+/* 활용1과 활용2 카드는 각각 한 열씩 차지 */
+.tech-card:nth-child(2),
+.tech-card:nth-child(3) {
+  grid-column: span 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s;
+}
+
+.tech-card:hover {
+  transform: translateY(-10px);
+}
+
+.tech-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.tech-card p {
+  margin-bottom: 0.5rem;
+  color: #555; /* 텍스트 색상 약간 어둡게 조정 */
+}
+
+.tech-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* 이미지 비율 유지 */
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* 비디오 컨테이너 스타일 */
+.platform-video-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.platform-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.benchmark-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.benchmark-image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 플랫폼 소개 섹션 */
+.platform {
+  background-color: white;
+  padding: 5rem 0;
+}
+
+.platform-release {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold; /* 굵게 표시 */
+}
+
+.platform-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.platform-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.platform-description p {
+  margin-bottom: 1rem;
+}
+
+.platform-image-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.platform-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.platform-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--light-color); /* 배경색 추가 */
+  border-radius: 10px; /* 모서리 둥글게 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* 그림자 추가 */
+  transition: transform 0.3s; /* 호버 효과 준비 */
+}
+
+.feature:hover {
+  transform: translateY(-5px); /* 호버 시 약간 위로 이동 */
+}
+
+.feature i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.argo-logo {
+  max-width: 200px;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: var(--secondary-color);
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 992px) {
+  .tech-cards {
+    grid-template-columns: 1fr 1fr; /* 태블릿에서는 2열로 변경 */
+  }
+  
+  .tech-card:first-child {
+    grid-column: 1 / -1; /* 여전히 전체 너비 */
+  }
+  
+  .tech-card:nth-child(2),
+  .tech-card:nth-child(3) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: row; /* 수정: column에서 row로 변경 */
+    justify-content: space-between;
+  }
+  
+  nav ul {
+    margin-top: 0; /* 수정: 상단 여백 제거 */
+  }
+  
+  .hero h1, .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-text, .about-image {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .tech-cards {
+    grid-template-columns: 1fr; /* 모바일에서는 1열로 변경 */
+  }
+  
+  .tech-card:first-child,
+  .tech-card:nth-child(2),
+  .tech-card:nth-child(3) {
+    grid-column: 1; /* 모두 한 열 차지 */
+  }
+  
+  .platform-features {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* 모바일 메뉴 */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--dark-color);
+    padding: 1rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 0.5rem 0;
+  }
+}
+
+/* 애니메이션 효과 */
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-animation.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 추가 스타일 - 섹션 간 구분선 */
+section:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 추가 스타일 - 이미지 최적화 */
+img {
+  max-width: 100%;
+  height: auto;
+}
