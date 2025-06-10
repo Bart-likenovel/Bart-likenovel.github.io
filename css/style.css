@@ -253,8 +253,8 @@ section h2 {
 
 /* 수정된 tech-cards 레이아웃 */
 .tech-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3개의 동일한 너비 열 */
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-bottom: 3rem;
   max-width: 1200px;
@@ -264,19 +264,22 @@ section h2 {
 
 /* 첫 번째 카드(벤치마크)는 전체 너비 차지 */
 .tech-card:first-child {
-  grid-column: 1 / -1; /* 모든 열을 차지 */
+  flex: 0 0 100%;
   max-width: 100%;
   background-color: #f8f9fa;
   border: 1px solid #e9ecef;
 }
 
-/* 활용1과 활용2 카드는 각각 한 열씩 차지 */
-.tech-card:nth-child(2),
+/* 활용1 카드 - 왼쪽 50% 너비 */
+.tech-card:nth-child(2) {
+  flex: 0 0 calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+}
+
+/* 활용2 카드 - 오른쪽 50% 너비 */
 .tech-card:nth-child(3) {
-  grid-column: span 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  flex: 0 0 calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
 }
 
 .tech-card {
@@ -470,17 +473,10 @@ footer {
 
 /* 반응형 디자인 */
 @media (max-width: 992px) {
-  .tech-cards {
-    grid-template-columns: 1fr 1fr; /* 태블릿에서는 2열로 변경 */
-  }
-  
-  .tech-card:first-child {
-    grid-column: 1 / -1; /* 여전히 전체 너비 */
-  }
-  
   .tech-card:nth-child(2),
   .tech-card:nth-child(3) {
-    grid-column: span 1;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
@@ -508,14 +504,11 @@ footer {
     margin-bottom: 2rem;
   }
   
-  .tech-cards {
-    grid-template-columns: 1fr; /* 모바일에서는 1열로 변경 */
-  }
-  
   .tech-card:first-child,
   .tech-card:nth-child(2),
   .tech-card:nth-child(3) {
-    grid-column: 1; /* 모두 한 열 차지 */
+    flex: 0 0 100%;
+    max-width: 100%;
   }
   
   .platform-features {
