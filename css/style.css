@@ -290,9 +290,9 @@ section h2 {
   transition: transform 0.3s;
 }
 
-.tech-card:hover {
+/* .tech-card:hover {
   transform: translateY(-10px);
-}
+} */
 
 .tech-card h3 {
   color: var(--primary-color);
@@ -406,9 +406,9 @@ section h2 {
   transition: transform 0.3s; /* 호버 효과 준비 */
 }
 
-.feature:hover {
-  transform: translateY(-5px); /* 호버 시 약간 위로 이동 */
-}
+/* .feature:hover {
+  transform: translateY(-5px);
+} */
 
 .feature i {
   font-size: 2.5rem;
@@ -459,10 +459,6 @@ footer {
 
 .footer-section a {
   color: var(--secondary-color);
-}
-
-.footer-section a:hover {
-  color: white;
 }
 
 .footer-bottom {
@@ -654,10 +650,10 @@ img {
   background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
 }
 
-.service-card:hover {
+/* .service-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .service-header {
   margin-bottom: 1.5rem;
