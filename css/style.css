@@ -50,11 +50,12 @@ a:hover {
 header {
   background-color: var(--dark-color);
   color: white;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -73,8 +74,9 @@ header {
 }
 
 .logo img {
-  height: 40px;
+  height: 32px;
   vertical-align: middle;
+  transition: all 0.3s ease;
 }
 
 nav ul {
@@ -108,7 +110,7 @@ nav ul li a:hover {
   align-items: center;
   text-align: center;
   color: white;
-  padding-top: 60px;
+  padding-top: 55px;
   position: relative;
   overflow: hidden;
 }
@@ -525,6 +527,10 @@ footer {
 
 /* 반응형 디자인 */
 @media (max-width: 992px) {
+  .logo img {
+    height: 30px;
+  }
+  
   .tech-card:nth-child(2),
   .tech-card:nth-child(3) {
     flex: 0 0 100%;
@@ -601,12 +607,16 @@ footer {
     display: block;
   }
   
+  .logo img {
+    height: 28px;
+  }
+  
   nav ul {
     display: none;
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 60px;
+    top: 52px;
     left: 0;
     background-color: var(--dark-color);
     padding: 1rem 0;
@@ -826,6 +836,17 @@ img {
   
   .tech-card p {
     font-size: 0.9rem;
+  }
+}
+
+/* 아주 작은 화면을 위한 미디어 쿼리 */
+@media (max-width: 480px) {
+  .logo img {
+    height: 24px;
+  }
+  
+  nav ul {
+    top: 46px;
   }
 }
 
